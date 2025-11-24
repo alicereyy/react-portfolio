@@ -93,9 +93,9 @@ const projectsData = [
 const Projects = () => {
   return (
     <section id="projects" className="projects-section">
-      <h2 className="projects-heading">Projets</h2>
+      <h2 className="projects-heading">Projects</h2>
       <p className="projects-intro">
-        Voici une sélection de projets sur lesquels j’ai travaillé récemment.
+        Here is a selection of projects I have worked on recently.
       </p>
 
       <div className="projects-track">
