@@ -1,0 +1,140 @@
+/* --- SECTION GENERALE --- */
+
+.projects-section {
+  margin-top: 3rem;
+  padding: 1.5rem 1.5rem;
+  text-align: justify;
+  background-color: #093350;
+}
+
+.projects-heading {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  color: white;
+}
+
+.projects-intro {
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+  color: white;
+}
+
+/* --- PISTE DE PROJETS (swipe mobile / liste desktop) --- */
+
+/* Par défaut (mobile first) : on veut un swipe horizontal */
+.projects-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.projects-track::-webkit-scrollbar {
+  height: 6px;       /* Scroll horizontal fin */
+}
+
+.projects-track::-webkit-scrollbar-track {
+  background: transparent;  /* invisible */
+}
+
+.projects-track::-webkit-scrollbar-thumb {
+  background: #acacac;       /* couleur moderne */
+  border-radius: 10px;
+}
+
+.projects-track::-webkit-scrollbar-thumb:hover {
+  background: #1f75b6;
+}
+
+/* --- CARTE PROJET --- */
+
+.project-card {
+  scroll-snap-align: center;
+  flex: 0 0 85%; /* largeur des cartes en mobile (85% de l’écran) */
+
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Image du projet */
+.project-image img {
+  width: 100%;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  max-height: 220px;
+}
+
+/* Texte du projet */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.project-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+.project-description {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* --- DESKTOP : layout alterné gauche/droite --- */
+
+@media (min-width: 900px) {
+  .projects-track {
+    display: block;       /* plus de flex row : on repasse en pile verticale */
+    overflow: visible;    /* pas de swipe sur desktop */
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: row;  /* image à gauche, texte à droite */
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    flex: none;           /* ignorer la largeur 85% */
+    margin-bottom: 1.5rem;
+    scroll-snap-align: none;
+  }
+
+  .project-card:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .project-image {
+    flex: 0 0 40%;
+  }
+
+  .project-image img {
+    height: 100%;
+    max-height: none;
+  }
+
+  .project-content {
+    flex: 1;
+  }
+
+  /* Version alternée : image à droite, texte à gauche */
+  .project-card--reverse {
+    flex-direction: row-reverse;
+  }
+}

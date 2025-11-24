@@ -1,0 +1,45 @@
+/* Barre de navigation globale (fond) */
+.navbar {
+  width: 100%;
+  background-color: #093350;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Contenu centré et aligné avec .main-content */
+.navbar-inner {
+  max-width: 1100px;       /* même valeur que .main-content dans App.css */
+  margin: 0 auto;          /* centre horizontalement */
+  padding: 1rem 1.5rem;    /* même padding horizontal que .main-content */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Nom à gauche */
+.navbar-name {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2vw, 2rem); /* responsive */
+  color: #ffffff;
+}
+
+/* Titre à droite */
+.navbar-title {
+  margin: 0;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.8vw, 1.5rem); /* responsive */
+  color: #ffffff;
+}
+
+/* Mobile : on empile le nom et le titre */
+@media (max-width: 600px) {
+  .navbar-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.3rem;
+  }
+}
