@@ -25,7 +25,8 @@ It presents my profile, skills, experiences, and selected academic and personal 
 git clone https://github.com/alicereyy/react-portfolio.git
 cd react-portfolio
 npm install
-npm start```
+npm start
+```
 App runs at http://localhost:3000.
 
 ## 🔒 Note
