@@ -1,4 +1,4 @@
-# Personal Portfolio — React
+# Personal Portfolio - React
 
 This repository contains the source code of my **personal portfolio website**, built with **React** and deployed on **Vercel**.  
 It presents my profile, skills, experiences, and selected academic and personal projects.
